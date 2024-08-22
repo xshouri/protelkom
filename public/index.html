@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    
+    <!-- ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://kit.fontawesome.com/12a594e2d3.js" crossorigin="anonymous"></script>
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>PROtelkom</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+  
+    <!-- SwiperJS script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>const swiper = new Swiper('.testimonials-swiper', {
+    loop: true,
+    slidesPerView: 1,
+    grabCursor: true,
+    spaceBetween: 30,
+    autoHeight: false,
+
+
+    autoplay: {
+      delay: 5000,
+    },
+    // pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    // naviagtion arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+    // responsive breakpoints
+    breakpoints: {
+      0: {
+        slidesPerView: 1
+      },
+      760: {
+        slidesPerView: 2
+      },
+      1200: {
+        slidesPerView: 3
+      }
+    }
+  });
+    // service slider
+    const cardsService = document.querySelectorAll('.slider-card-service');
+
+    cardsService.forEach(cardService => {
+      cardService.addEventListener('mouseenter', () => {
+        cardsService.forEach(c => c.style.height = smallHeight);
+        cardService.style.height = height;
+      });
+    });
+
+    // year
+    const d = new Date();
+    let year = d.getFullYear()-2005;
+    document.getElementsByClassName("year")[0].innerHTML = year;
+    document.getElementsByClassName("year")[1].innerHTML = year;
+  </script>
+</html>
